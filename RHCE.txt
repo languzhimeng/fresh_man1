@@ -1,0 +1,76 @@
+Autofs
+	*	-rw,v3	classroom.example.com:/home/guests/&
+
+
+Teamd  
+	man nmcli-examples(examples 7) 
+	man teamd.conf
+
+
+Mail
+	server0 -->student@server0.example.com
+	root	-->	student
+	root@server0 --> student@server0
+	root@desktop0 --> student@desktop0
+	配置
+		relayhost
+		interface
+		my(nod)
+		local_
+
+
+SMB
+	出现killed，可以增加swap(reboot)
+		man mount.cifs /username /sec=
+	权限不足/无法访问
+		selinux	防火墙	facl  'host allow'	
+
+NFS	
+	证书下载(200 下载速度)
+	server   nfs-secure-server nfs-server
+	desktop	 nfs-secure	nfs
+	访问被拒绝
+		检查防火墙，证书，重起服务
+	无法写入
+		检查目录ldapuser0权限
+
+
+HTTPD
+	yum list | grep ^httpd
+	yum list | grep ^mod
+	yum -y install httpd-manual
+	server0/manual
+		virtual hosts --> 虚拟主机
+		access control	--> require ip
+		CGI: Dynamic Content -->	ScriptAlias
+		8909	journalctl -xn
+	
+ISCSI
+	yum list | grep ^tar
+	man iscsiadm	EXAMPLESE:discover,login
+	vim /etc/rc.d/rc.local
+		for i in {1..20}
+		do
+        	mount -a
+        	sleep 5
+		done	
+	chmod +x /etc/rc.d/rc.local
+
+MySQL	
+	先改root密码，再清除空密码登陆.
+	查询名字，可先将页面切换为英文。英文会显示查询first name 还是 last name
+
+两台机器配置相同
+	别名、teamd、邮件、ipv6、
+
+
+评分脚本
+	RHCE rht-labcheck
+	RHCSA rht-checkcsa
+
+
+
+
+
+
+
